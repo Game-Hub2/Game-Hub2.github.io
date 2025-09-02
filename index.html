@@ -5,6 +5,7 @@
 Hi milos :)
 <canvas width = "570" height = "570" id="canvas"></canvas>
 </body>
+<script src="./script.js"/>
 <script>
     var vertices = [
             -0.5,0.5,0.0,
@@ -17,6 +18,12 @@ Hi milos :)
 
     const canvas = document.getElementById("canvas")
     const gl = canvas.getContext("webgl2")
+
+    if (!gl) {
+        error("Browser does not support WebGL2")
+        return
+    }
+
     var vertexBuffer = gl.createBuffer()
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer)
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW)
