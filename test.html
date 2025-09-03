@@ -11,8 +11,7 @@
       function go(e) {
         e.preventDefault();
         const u = document.getElementById("url").value;
-        document.getElementById("frame").src =
-          "https://youtube.com"
+        document.getElementById("frame").src = encodeURIComponent(u)
       }
     </script>
   </body>
